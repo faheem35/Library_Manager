@@ -23,3 +23,19 @@ export const removeBookAPI=async(id)=>{
         return await commonAPI("PUT", `${serverURL}/uploadVideos/${id}`, updatedData);
       };
       
+
+      //saveHistoryAPI-post http method to http://localhost:3000/history called by videocard when we click on video.
+export const saveHistoryAPI=async (historyDetails)=>{
+        return await commonAPI(`POST`,`${serverURL}/history`,historyDetails)
+ }
+
+ //getAllHistoryAPI- get http method to http://localhost:3000/history called by history componnet when it open in browser
+export const getAllHistoryAPI=async ()=>{
+        return await commonAPI(`GET`,`${serverURL}/history`,"")
+ }
+
+
+ //deleteHistoryAPI - delete method to http://localhost:3000/history/id called by history when clicked on delete button
+export const deleteHistoryAPI=async(id)=>{
+        return await commonAPI(`DELETE`,`${serverURL}/history/${id}`,{})
+ }

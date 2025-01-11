@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Card, Modal, Form, Button } from "react-bootstrap";
-import { removeBookAPI, updateBookAPI } from "../services/allAPI";
+import { removeBookAPI, saveHistoryAPI, updateBookAPI } from "../services/allAPI";
 import toast, { Toaster } from 'react-hot-toast';
 
 const VideoCard = ({ displayData, SetDeleteBookResponseFromBookCard, SetUpdateBookResponseFromBookCard }) => {
@@ -17,7 +17,28 @@ const VideoCard = ({ displayData, SetDeleteBookResponseFromBookCard, SetUpdateBo
     setEditMode(false);
   };
 
-  const handleShow = () => setShow(true);
+  const handleShow =async () =>{
+//display modal
+    setShow(true)
+
+    const{caption,siteLink}=displayData
+    const sysDateTime= new Date()
+    console.log(sysDateTime);
+    console.log(sysDateTime.toLocaleString('en-US',{timeZoneName:'short'}));
+    const timeStamp=sysDateTime.toLocaleString('en-US',{timeZoneName:'short'})
+    const historyDetails={caption,siteLink,timeStamp}
+
+    //api call to store in history 
+    try{
+      await saveHistoryAPI(historyDetails)
+  
+      }catch(err){
+        console.log(err);
+        
+      }
+  
+    
+  } 
 
   const handleEdit = () => setEditMode(true);
 
@@ -44,6 +65,7 @@ const VideoCard = ({ displayData, SetDeleteBookResponseFromBookCard, SetUpdateBo
     try {
       const result = await removeBookAPI(id);
       SetDeleteBookResponseFromBookCard(result);
+      toast.success("Book Deleted successfully!")
     } catch (err) {
       console.log(err);
     }
