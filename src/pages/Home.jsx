@@ -13,7 +13,7 @@ const Home = () => {
       <div className='d-flex justify-content-between container mb-5'>
 
         <Add setAddResponseFromHome={setAddResponseFromHome}/>
-        <Link to={'/history'}>Read History</Link>
+        <Link className='text-warning' to={'/history'}>Read History</Link>
 
       </div>
 

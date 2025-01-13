@@ -9,14 +9,14 @@ const Landing = () => {
         {/* Text Column */}
         <Col xs={12} md={6} className="d-flex flex-column justify-content-center">
           <h3>
-            Welcome to <span className="text-warning">Library Manager</span>
+            Welcome to <span className="text-danger">Library Manager</span>
           </h3>
           <p style={{ textAlign: 'justify' }} className="mt-4 px-3 px-md-0">
             Library Manager is a tool designed to help users efficiently manage their personal or organizational library. With Library Manager, you can easily add new books to your collection by simply inputting the book details, remove books when they are no longer needed, and even track the history of books read.
           </p>
           <Link
             to={'/home'}
-            className="btn btn-primary mt-3 mx-auto mx-lg-0 align-self-lg-start"
+            className="btn btn-danger mt-3 mx-auto mx-lg-0 align-self-lg-start"
           >
             Get Started
           </Link>

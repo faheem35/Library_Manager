@@ -25,7 +25,7 @@ const History = () => {
   };
 
   const removeHistory = async (id) => {
-    try {
+    try { 
       
       await deleteHistoryAPI(id);
       getAllHistory(); // Reload data from server after delete
@@ -40,7 +40,7 @@ const History = () => {
     <div style={{ paddingTop: '50px' }} className="min-vh-100 container">
       <div className="d-flex justify-content-between align-items-center py-4">
         <h3 className="fs-5">Watch History</h3>
-        <Link to="/home" >
+        <Link className='text-warning' to="/home" >
           Back to Home
         </Link>
       </div>
@@ -67,7 +67,7 @@ const History = () => {
                       href={BookDetails?.siteLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-decoration-none"
+                      className="text-decoration-none text-warning"
                     >
                       Visit
                     </a>

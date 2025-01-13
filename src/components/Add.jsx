@@ -56,7 +56,7 @@ const Add = ({setAddResponseFromHome}) => {
     <>
     <div className='d-flex align-items-center'>
                                         <h5> Upload New Book</h5>
-                                        <button onClick={handleShow} className='btn btn-warning ms-3 rounded-circle fw-bolder fs-5'>+</button>
+                                        <button onClick={handleShow} className='btn btn-danger ms-3 rounded-circle fw-bolder fs-5'>+</button>
                                         <Toaster position='top-right'/>
                               </div>
 

@@ -87,7 +87,7 @@ const VideoCard = ({ displayData, SetDeleteBookResponseFromBookCard, SetUpdateBo
               <span className="text-white">{displayData?.caption}</span>
              <div className="d-flex align-items-center justify-content-end">
                 <span onClick={handleEdit}>
-                  <i className="fa-solid fa-pen-to-square" style={{cursor: "pointer"}} ></i>
+                  <i className="fa-solid fa-pen-to-square text-success" style={{cursor: "pointer"}} ></i>
                 </span>
                 <button
                   onClick={() => deleteBook(displayData?.id)}
